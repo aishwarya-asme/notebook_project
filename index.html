@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook - Crud Crud</title>
+    <style>
+        
+        #app {
+            display: flex;
+            justify-content: space-between;
+        }
+        #left {
+            width: 50%;
+        }
+
+        #center {
+            margin: 0 auto;
+            text-align: center;
+            }
+        #right {
+            width: 50%;
+        }
+        #noteTitle, #noteDesc, #searchNote {
+            margin: 5px;
+        }
+        #notesContainer {
+            margin-top: 10px;
+        }
+        .note {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+        .delete {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="center">
+            <h1>Notebook</h1>
+            <label for="searchNote">Search Note:</label>
+            <input type="text" id="searchNote" placeholder="Search Note"/> <br>
+            <button id="searchButton">Search</button>
+            <p>Total Notes: <span id="totalNotes">0</span></p>
+            <p>Showing: <span id="showing">0</span></p>
+            <div id='notesContainer'></div>
+        </div>
+    </div>
+
+
+    <form onsubmit="saveToServer(event)">
+        <label for="noteTitle">Note Title:</label>
+        <input type="text" id="noteTitle" placeholder="Enter note title"/>
+        
+        <br>
+
+        <label for="noteDesc">Note Description:</label><br>
+
+        <textarea id="noteDesc" placeholder="Enter note description" rows="10" cols="50"></textarea><br>
+
+        
+        <button type="submit">Add to Book</button>
+    </form>
+
+    <ul id='listOfbooks'></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
